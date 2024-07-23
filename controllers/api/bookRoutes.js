@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
 });
 
 // GET a single book
+// Geri, Search by book Title rather than ID, or per Quentin, lets try the findOne method
 router.get('/:id', (req, res) => {
   const book = Book.findById(parseInt(req.params.id));
   if (book) {
@@ -29,7 +30,7 @@ router.put('/:id', (req, res) => {
   if (updatedBook) {
     res.json(updatedBook);
   } else {
-    res.status(404).json({ message: 'Book not found' });
+    res.status(404).json({ message: 'Book checked out' });
   }
 });
 
