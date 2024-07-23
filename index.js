@@ -31,6 +31,9 @@ app.get('/api/book/:isbn', async (req, res) => {
   }
 });
 
+const homeRouter = require('./controllers/homeRoutes');
+app.use('/', homeRouter)
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
