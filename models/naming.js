@@ -12,5 +12,9 @@ const booksList = [{
         bookPubYear: "Publication Year 1",
         bookCategory: "Science Fiction 1",
         bookDescription: "Story of man who lived forever. 1",
-        bookIDStatus: "Checked In/Out 1"
+        bookIDStatus: "Checked In/Out 1"  // bookIDStatus is a boolean value
     },
+]
+
+
+
