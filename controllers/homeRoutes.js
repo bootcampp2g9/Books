@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
-const withAuth = require('../utils/auth');
+const { Project, User } = require('../models'); // Import the book and user models from the models directory
+const withAuth = require('../utils/auth'); // Import the withAuth middleware to protect routes
 
+// Route to handle GET requests for the homepage
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all *projects* and JOIN with user data
     const projectData = await Project.findAll({
       include: [
         {
@@ -18,6 +19,8 @@ router.get('/', async (req, res) => {
     const projects = projectData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data and session flag into template
+    // Pass logged_in status from session,
+    //  If there's an error, respond with a 500 status and the error message
     res.render('homepage', { 
       projects, 
       logged_in: req.session.logged_in 
@@ -27,6 +30,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Route to handle GET requests for a specific (book not project) by its ID
 router.get('/project/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
@@ -50,6 +54,7 @@ router.get('/project/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
+// Route to handle GET requests for the profile page, using withAuth middleware, include the users books
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -69,6 +74,7 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+// Route to handle GET requests for the login page
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
