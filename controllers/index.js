@@ -1,23 +1,17 @@
 const router = require('express').Router();// require express and create router
-const userRoutes = require('./api/bookRoutes');//import route handler
-const projectRoutes = require('./api/projectRoutes');//import route handler
-const apiRoutes = require('./api');
-router.use('/users', userRoutes);//requests starting with users will be routed to userRoutes
-router.use('/projects', projectRoutes);//requests starting with projects will be router to projectRoutes
+const apiRoutes = require('./api'); //
+const homeRoutes = require('./homeRoutes');
 router.use('/api',apiRoutes);//reuqests made to /api route will be routed to index.js 
+router.use('/',homeRoutes);//
+// This already exists in server.js, redundant
+// const app = express();
+// // const PORT = process.env.PORT || 3000;
+
+// app.use(bodyParser.json());
+
+// // app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
+
+// Moved model.exports to bottom for best practice
 module.exports = router;
-
-const express = require('express');
-const bodyParser = require('body-parser');
-const booksRouter = require('./routes/books');
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(bodyParser.json());
-
-app.use('/api/books', booksRouter);
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});

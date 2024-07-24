@@ -8,9 +8,9 @@ router.get('/', (req, res) => {
 });
 
 // GET a single book
-// Geri, Search by book Title rather than ID, or per Quentin, lets try the findOne method
+// Search by book Title rather than ID, or per Quentin, lets try the findOne method. Go over findByPk with tutor. Discuss both options
 router.get('/:id', (req, res) => {
-  const book = Book.findById(parseInt(req.params.id));
+  const book = Book.findByPk(parseInt(req.params.id));
   if (book) {
     res.json(book);
   } else {
