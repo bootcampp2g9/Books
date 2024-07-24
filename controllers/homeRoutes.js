@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Project, User } = require('../models'); // Import the book and user models from the models directory
+const { Book, User } = require('../models'); // Import the book and user models from the models directory
 const withAuth = require('../utils/auth'); // Import the withAuth middleware to protect routes
 
 // Route to handle GET requests for the homepage
 router.get('/', async (req, res) => {
   try {
-    // Get all *projects* and JOIN with user data
-    const projectData = await Project.findAll({
+    // Get all books and JOIN with user data
+    const projectData = await Book.findAll({
       include: [
         {
           model: User,
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    const projects = projectData.map((project) => Book.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     // Pass logged_in status from session,
@@ -24,16 +24,16 @@ router.get('/', async (req, res) => {
     res.render('homepage', { 
       projects, 
       logged_in: req.session.logged_in 
-    });
+    });                         
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Route to handle GET requests for a specific (book not project) by its ID
-router.get('/project/:id', async (req, res) => {
+// Route to handle GET requests for a specific book by its ID 
+router.get('/Book/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    const projectData = await Book.findByPk(req.params.id, {
       include: [
         {
           model: User,
