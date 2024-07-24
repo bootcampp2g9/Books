@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3000;
 async function fetchBookDetails(isbn) {
   try {
     const response = await axios.get(`https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error('Error fetching book details:', error);
