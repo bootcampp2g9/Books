@@ -1,8 +1,18 @@
 const express = require('express');
 const axios = require('axios');
 
+const exphbs = require('express-handlebars');
+const helpers = require('./utils/helpers');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ helpers });
+
+// Inform Express.js on which template engine to use
+app.set('view engine', 'handlebars');
+app.engine('handlebars', hbs.engine);
 
 // Function to fetch book details by ISBN
 async function fetchBookDetails(isbn) {
@@ -30,6 +40,13 @@ app.get('/api/book/:isbn', async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 });
+
+app.get('/', async(req, res) => {
+  res.render('login');
+});
+
+// const homeRouter = require('./controllers/homeRoutes');
+// app.use('/', homeRouter)
 
 // Start the server
 app.listen(PORT, () => {

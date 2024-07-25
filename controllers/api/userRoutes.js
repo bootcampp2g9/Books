@@ -1,6 +1,11 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+userRoutes.jsonrouter.get('/login', function(req,res){
+  res.render('/login');
+})
+localhost:3000/user/login
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
