@@ -1,3 +1,12 @@
-body{
+/* body{
     background: url("public/images/BOOK\ Cover.jpg") no-repeat
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/CoverBook.jpeg'); /* the path to the image */
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
 }
