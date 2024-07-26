@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Book = require('../models/book');
+const Book = require('../../models/book');
 
 // GET all books
 router.get('/', (req, res) => {
@@ -8,8 +8,9 @@ router.get('/', (req, res) => {
 });
 
 // GET a single book
+// Search by book Title rather than ID, or per Quentin, lets try the findOne method. Go over findByPk with tutor. Discuss both options
 router.get('/:id', (req, res) => {
-  const book = Book.findById(parseInt(req.params.id));
+  const book = Book.findByPk(parseInt(req.params.id));
   if (book) {
     res.json(book);
   } else {
@@ -29,7 +30,7 @@ router.put('/:id', (req, res) => {
   if (updatedBook) {
     res.json(updatedBook);
   } else {
-    res.status(404).json({ message: 'Book not found' });
+    res.status(404).json({ message: 'Book checked out' });
   }
 });
 
