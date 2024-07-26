@@ -7,6 +7,12 @@ router.get('/', (req, res) => {
   res.json(Book.findAll());
 });
 
+// GET books by genre
+router.get('/:genre', (req , res) => {
+  const books = Book.findAll({bookGenre : genre});
+  res.json(books);
+});
+
 // GET a single book
 // Search by book Title rather than ID, or per Quentin, lets try the findOne method. Go over findByPk with tutor. Discuss both options
 router.get('/:id', (req, res) => {
