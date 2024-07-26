@@ -1,12 +1,10 @@
-
-//mini-project code
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Book extends Model {}
 
-//mini-project variable definitions
-Project.init(
+//Book variable definitions
+Book.init(
   {
     bookID: {
         type: DataTypes.INTEGER,
@@ -58,14 +56,16 @@ Project.init(
     //     key: 'id',
     //   },
     // },
+    // Updated modelName from `Project` to `Book`
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'Book',
   }
 );
 
-module.exports = Project;
+// Updated from `Project` to `Book`
+module.exports = Book;
