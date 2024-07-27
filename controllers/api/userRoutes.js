@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-userRoutes.jsonrouter.get('/login', function(req,res){
-  res.render('/login');
-})
-localhost:3000/user/login
+// Fixed destructuring issue
+
 
 router.post('/', async (req, res) => {
   try {

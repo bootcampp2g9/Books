@@ -1,13 +1,14 @@
 const User = require('./User');
-const Project = require('./Project');
+const Book = require('./book');
 
-User.hasMany(Project, {
+User.hasMany(Book, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(User, {
+Book.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Project };
+//Renamed to make work with group project, not mini code? 
+module.exports = { User, Book };
