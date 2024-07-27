@@ -1,5 +1,5 @@
 const User = require('./User');
-const Book = require('./book');
+const Book = require('./Book');
 
 User.hasMany(Book, {
   foreignKey: 'user_id',
@@ -10,5 +10,4 @@ Book.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-//Renamed to make work with group project, not mini code? 
 module.exports = { User, Book };
