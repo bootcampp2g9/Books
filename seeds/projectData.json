@@ -176,6 +176,7 @@
         "bookCategory": "Childrens",
         "bookDescription": "With unmistakable characters and signature rhymes, Dr. Seuss’s beloved favorite has cemented its place as a children’s classic. In this most famous of cumulative tales, the list of places to enjoy green eggs and ham, and friends to enjoy them with, gets longer and longer. Follow Sam-I-am as he insists that this unusual treat is indeed a delectable snack to be savored everywhere and in every way.",
         "bookIDStatus": "TRUE"
+<<<<<<< HEAD
     },
     {
         "bookID": "",
@@ -268,5 +269,99 @@
         "bookDescription": "",
         "bookIDStatus": "TRUE"
 >>>>>>> 81ad4dfbc6f76e9488dc7915bce46529f8094bce
+=======
+>>>>>>> c1107733aad6abfc687fa869996806f069a41fde
     }
+    //,
+    // {
+    //     "bookID": "",
+    //     "bookISBN": "",
+    //     "bookTitle": "",
+    //     "bookAuthor": "",
+    //     "bookPages": ,
+    //     "bookEdition": ,
+    //     "bookPublisher_ID": "",
+    //     "bookPubYear": "",
+    //     "bookCategory": "",
+    //     "bookDescription": "",
+    //     "bookIDStatus": "TRUE"
+    // },
+    // {
+    //     "bookID": "",
+    //     "bookISBN": "",
+    //     "bookTitle": "",
+    //     "bookAuthor": "",
+    //     "bookPages": ,
+    //     "bookEdition": ,
+    //     "bookPublisher_ID": "",
+    //     "bookPubYear": "",
+    //     "bookCategory": "",
+    //     "bookDescription": "",
+    //     "bookIDStatus": "TRUE"
+    // },
+    // {
+    //     "bookID": "",
+    //     "bookISBN": "",
+    //     "bookTitle": "",
+    //     "bookAuthor": "",
+    //     "bookPages": ,
+    //     "bookEdition": ,
+    //     "bookPublisher_ID": "",
+    //     "bookPubYear": "",
+    //     "bookCategory": "",
+    //     "bookDescription": "",
+    //     "bookIDStatus": "TRUE"
+    // },
+    // {
+    //     "bookID": "",
+    //     "bookISBN": "",
+    //     "bookTitle": "",
+    //     "bookAuthor": "",
+    //     "bookPages": ,
+    //     "bookEdition": ,
+    //     "bookPublisher_ID": "",
+    //     "bookPubYear": "",
+    //     "bookCategory": "",
+    //     "bookDescription": "",
+    //     "bookIDStatus": "TRUE"
+    // },
+    // {
+    //     "bookID": "",
+    //     "bookISBN": "",
+    //     "bookTitle": "",
+    //     "bookAuthor": "",
+    //     "bookPages": ,
+    //     "bookEdition": ,
+    //     "bookPublisher_ID": "",
+    //     "bookPubYear": "",
+    //     "bookCategory": "",
+    //     "bookDescription": "",
+    //     "bookIDStatus": "TRUE"
+    // },
+    // {
+    //     "bookID": "",
+    //     "bookISBN": "",
+    //     "bookTitle": "",
+    //     "bookAuthor": "",
+    //     "bookPages": ,
+    //     "bookEdition": ,
+    //     "bookPublisher_ID": "",
+    //     "bookPubYear": "",
+    //     "bookCategory": "",
+    //     "bookDescription": "",
+    //     "bookIDStatus": "TRUE"
+    // },
+    // {
+    //     "bookID": "",
+    //     "bookISBN": "",
+    //     "bookTitle": "",
+    //     "bookAuthor": "",
+    //     "bookPages": ,
+    //     "bookEdition": ,
+    //     "bookPublisher_ID": "",
+    //     "bookPubYear": "",
+    //     "bookCategory": "",
+    //     "bookDescription": "",
+    //     "bookIDStatus": "TRUE"
+    // }
 ]

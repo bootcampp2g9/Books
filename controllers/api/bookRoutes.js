@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const Book = require('../../models/book');
 
 // GET all books
 router.get('/', (req, res) => {
@@ -23,6 +22,18 @@ router.get('/:id', (req, res) => {
     res.status(404).json({ message: 'Book not found' });
   }
 });
+
+//Add async any variable can now be 'awaited' (waiting for something to come back)
+// We will be awaiting out user model here 
+router.get("test/:id", async (req, res) => {
+  try {
+  const book = Book.findByPk(parseInt(req.params.id)); 
+  res.status(200).json(book) 
+  } catch (err) {
+  console.error(err)
+  res.status(500).json(err)  
+  }
+})
 
 // POST a new book
 router.post('/', (req, res) => {
