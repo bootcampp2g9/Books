@@ -1,12 +1,20 @@
 
+//const booksList = 
 [
     {
-        "bookID": "",
-        "bookISBN": "9781556159008",
-        "bookTitle": "Rapid Development: Taming Wild Software Schedules",
-        "bookAuthor": "Steve McConnell",
-        "bookPages": 647,
+        "bookID": "ID 1",
+        "bookISBN": "ISBN 1",
+        "bookTitle": "Title 1",
+        "bookAuthor": "Number_One_Writer",
+        "bookPages": 111,
         "bookEdition": 1,
+<<<<<<< HEAD
+        "bookPublisher_ID": "Publisher 1 ID",
+        "bookPubYear": "Publication Year 1",
+        "bookCategory": "Science Fiction 1",
+        "bookDescription": "Story of man who lived forever. 1",
+        "bookIDStatus": "Checked In/Out 1"
+=======
         "bookPublisher_ID": "Microsoft Press",
         "bookPubYear": "1996",
         "bookCategory": "Software Development",
@@ -168,6 +176,101 @@
         "bookCategory": "Childrens",
         "bookDescription": "With unmistakable characters and signature rhymes, Dr. Seuss’s beloved favorite has cemented its place as a children’s classic. In this most famous of cumulative tales, the list of places to enjoy green eggs and ham, and friends to enjoy them with, gets longer and longer. Follow Sam-I-am as he insists that this unusual treat is indeed a delectable snack to be savored everywhere and in every way.",
         "bookIDStatus": "TRUE"
+<<<<<<< HEAD
+    },
+    {
+        "bookID": "",
+        "bookISBN": "",
+        "bookTitle": "",
+        "bookAuthor": "",
+        "bookPages": ,
+        "bookEdition": ,
+        "bookPublisher_ID": "",
+        "bookPubYear": "",
+        "bookCategory": "",
+        "bookDescription": "",
+        "bookIDStatus": "TRUE"
+    },
+    {
+        "bookID": "",
+        "bookISBN": "",
+        "bookTitle": "",
+        "bookAuthor": "",
+        "bookPages": ,
+        "bookEdition": ,
+        "bookPublisher_ID": "",
+        "bookPubYear": "",
+        "bookCategory": "",
+        "bookDescription": "",
+        "bookIDStatus": "TRUE"
+    },
+    {
+        "bookID": "",
+        "bookISBN": "",
+        "bookTitle": "",
+        "bookAuthor": "",
+        "bookPages": ,
+        "bookEdition": ,
+        "bookPublisher_ID": "",
+        "bookPubYear": "",
+        "bookCategory": "",
+        "bookDescription": "",
+        "bookIDStatus": "TRUE"
+    },
+    {
+        "bookID": "",
+        "bookISBN": "",
+        "bookTitle": "",
+        "bookAuthor": "",
+        "bookPages": ,
+        "bookEdition": ,
+        "bookPublisher_ID": "",
+        "bookPubYear": "",
+        "bookCategory": "",
+        "bookDescription": "",
+        "bookIDStatus": "TRUE"
+    },
+    {
+        "bookID": "",
+        "bookISBN": "",
+        "bookTitle": "",
+        "bookAuthor": "",
+        "bookPages": ,
+        "bookEdition": ,
+        "bookPublisher_ID": "",
+        "bookPubYear": "",
+        "bookCategory": "",
+        "bookDescription": "",
+        "bookIDStatus": "TRUE"
+    },
+    {
+        "bookID": "",
+        "bookISBN": "",
+        "bookTitle": "",
+        "bookAuthor": "",
+        "bookPages": ,
+        "bookEdition": ,
+        "bookPublisher_ID": "",
+        "bookPubYear": "",
+        "bookCategory": "",
+        "bookDescription": "",
+        "bookIDStatus": "TRUE"
+    },
+    {
+        "bookID": "",
+        "bookISBN": "",
+        "bookTitle": "",
+        "bookAuthor": "",
+        "bookPages": ,
+        "bookEdition": ,
+        "bookPublisher_ID": "",
+        "bookPubYear": "",
+        "bookCategory": "",
+        "bookDescription": "",
+        "bookIDStatus": "TRUE"
+>>>>>>> 81ad4dfbc6f76e9488dc7915bce46529f8094bce
+=======
+>>>>>>> c1107733aad6abfc687fa869996806f069a41fde
     }
     //,
     // {
