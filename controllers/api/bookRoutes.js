@@ -1,23 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const { Book } = require('../../models/')
+const { Book } = require('../../models');
 
-// GET all books, added async await
-router.get('/', async (req, res) => {
- const books = await (Book.findAll());
- res.json(books);
+// GET all books
+router.get('/', (req, res) => {
+  res.json(Book.findAll());
 });
 
-// GET books by genre, added async await
-router.get('/:genre', async (req , res) => {
-  const books = await Book.findAll({bookGenre : genre});
+// GET books by genre
+router.get('/:genre', (req , res) => {
+  const books = Book.findAll({bookGenre : genre});
   res.json(books);
 });
 
-// GET a single book, added async await
+// GET a single book
 // Search by book Title rather than ID, or per Quentin, lets try the findOne method. Go over findByPk with tutor. Discuss both options
-router.get('/:id', async (req, res) => {
-  const book = await Book.findByPk(parseInt(req.params.id));
+router.get('/:id', (req, res) => {
+  const book = Book.findByPk(parseInt(req.params.id));
   if (book) {
     res.json(book);
   } else {
@@ -29,7 +28,7 @@ router.get('/:id', async (req, res) => {
 // We will be awaiting out user model here 
 router.get("test/:id", async (req, res) => {
   try {
-  const book = await Book.findByPk(parseInt(req.params.id)); 
+  const book = Book.findByPk(parseInt(req.params.id)); 
   res.status(200).json(book) 
   } catch (err) {
   console.error(err)
@@ -37,15 +36,15 @@ router.get("test/:id", async (req, res) => {
   }
 })
 
-// POST a new book, added async await
-router.post('/', async (req, res) => {
-  const book = await Book.create(req.body);
+// POST a new book
+router.post('/', (req, res) => {
+  const book = Book.create(req.body);
   res.status(201).json(book);
 });
 
-// Update a book, added async await
-router.put('/:id', async (req, res) => {
-  const updatedBook = await Book.update(parseInt(req.params.id), req.body);
+// Update a book
+router.put('/:id', (req, res) => {
+  const updatedBook = Book.update(parseInt(req.params.id), req.body);
   if (updatedBook) {
     res.json(updatedBook);
   } else {
@@ -53,9 +52,9 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// DELETE a book, added async await
-router.delete('/:id', async (req, res) => {
-  await Book.delete(parseInt(req.params.id));
+// DELETE a book
+router.delete('/:id', (req, res) => {
+  Book.delete(parseInt(req.params.id));
   res.status(204).end();
 });
 
