@@ -5,6 +5,11 @@ body {
     background-size: cover; /* Cover the entire screen */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating the image */
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
 }
 
 .background-bookcase{
@@ -16,16 +21,6 @@ body {
 
 .margin{
     margin: 10%
-}
-
-/* style.css */
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
 }
 
 /* Wrapper */
@@ -84,16 +79,8 @@ body {
     box-shadow: 2px 4px 0 #fff;
 }
 
-.filter .colour li a.grey {
-    background: #ddd;
-}
-
 .filter .colour li a.red {
     background: #FA5A70;
-}
-
-.filter .colour li a.purple {
-    background: #CE48F0;
 }
 
 .filter .colour li a.green {
@@ -101,15 +88,15 @@ body {
 }
 
 .filter .colour li a.pink {
-    background: #F22689;
+    background: #d111c7;
 }
 
 .filter .colour li a.blue {
-    background: #237FE0;
+    background: #2346e0;
 }
 
-.filter .colour li a.black {
-    background: #000;
+.filter .colour li a.yellow {
+    background: #e2af06;
 }
 
 /* Library Section */
@@ -145,8 +132,8 @@ body {
     background: #FA5A70;
 }
 
-.library li.book.grey {
-    background: #ddd;
+.library li.book.yellow {
+    background: #b9a00f;
     color: #1A1A1A;
 }
 
@@ -154,16 +141,11 @@ body {
     background: #36FFA5;
 }
 
-.library li.book.purple {
+.library li.book.pink {
     background: #CE48F0;
 }
 
-.library li.book.black {
-    background: #1A1A1A;
+.library li.book.blue {
+    background: #1c19d1;
     color: #fff;
-}
-
-.library li.book.red.grey {
-    background: linear-gradient(to bottom, #dddddd 0%, #fa5a70 100%);
-    color: #000;
 }
