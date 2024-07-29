@@ -1,62 +1,78 @@
-const router = require('express').Router();
-const { User } = require('../../models');
+const express = require('express');
+const router = express.Router();
+const bcrypt = require('bcrypt');
+const uuid = require('uuid');
+const path = require('path');
 
-// Fixed destructuring issue
-router.post('/', async (req, res) => {
-  try {
-    const userData = await User.create(req.body);
+// In-memory user store (replace with a real database in production)
+const users = new Map();
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(userData);
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
+// Route to serve signup page
+router.get('/signup', (req, res) => {
+    res.render('signup');
 });
 
+// Route to serve login page
+router.get('/login', (req, res) => {
+    res.render('login');
+});
+
+// Route for handling login
 router.post('/login', async (req, res) => {
-  try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const { username, password } = req.body;
 
-    if (!userData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
+    if (!username || !password) {
+        return res.status(400).json({ message: 'Please fill out both fields.' });
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const user = Array.from(users.values()).find(user => user.username === username || user.email === username);
 
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
-      return;
+    if (!user) {
+        return res.status(401).json({ message: 'Invalid username or password.' });
     }
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'Welcome to PageTurna!' });
-    });
+    const isMatch = await bcrypt.compare(password, user.password);
 
-  } catch (err) {
-    res.status(400).json(err);
-  }
+    if (!isMatch) {
+        return res.status(401).json({ message: 'Invalid username or password.' });
+    }
+
+    // In a real app, generate a token and send it to the client
+    res.status(200).json({ message: 'Login successful' });
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
+// Route for handling signup
+router.post('/signup', async (req, res) => {
+    const { username, email, password, confirmPassword } = req.body;
+
+    if (!username || !email || !password || !confirmPassword) {
+        return res.status(400).json({ message: 'Please fill out all fields.' });
+    }
+
+    if (password !== confirmPassword) {
+        return res.status(400).json({ message: 'Passwords do not match.' });
+    }
+
+    const existingUser = Array.from(users.values()).find(user => user.username === username || user.email === email);
+
+    if (existingUser) {
+        return res.status(409).json({ message: 'Username or email already exists.' });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const userId = uuid.v4();
+
+    const newUser = {
+        id: userId,
+        username,
+        email,
+        password: hashedPassword
+    };
+
+    users.set(userId, newUser);
+
+    // In a real app, generate a token and send it to the client
+    res.status(201).json({ message: 'User registered successfully' });
 });
 
 module.exports = router;
