@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 const { Book } = require('../../models/')
 
 // GET all books, added async await
