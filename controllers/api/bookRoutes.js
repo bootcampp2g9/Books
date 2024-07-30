@@ -1,5 +1,5 @@
 const express = require('express');
-const router = require('express').Router();
+const router = require('express').Router(); //updated to require express router
 const { Book } = require('../../models/')
 
 // GET all books, added async await
@@ -8,11 +8,11 @@ router.get('/', async (req, res) => {
  res.json(books);
 });
 
-// GET books by genre, added async await
-router.get('/:genre', async (req , res) => {
-  const books = await Book.findAll({bookGenre : genre});
-  res.json(books);
-});
+// // GET books by genre, added async await
+// router.get('/:genre', async (req , res) => {
+// //  const books = await Book.findAll({bookGenre : genre});
+//   res.json(books);
+// });
 
 // GET a single book, added async await
 // Search by book Title rather than ID, or per Quentin, lets try the findOne method. Go over findByPk with tutor. Discuss both options
