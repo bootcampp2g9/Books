@@ -8,11 +8,11 @@ router.get('/', async (req, res) => {
  res.json(books);
 });
 
-// GET books by genre, added async await
-router.get('/:genre', async (req , res) => {
-  const books = await Book.findAll({bookGenre : genre});
-  res.json(books);
-});
+// // GET books by genre, added async await. req.params.genre (suggest for andrew) additional slash will help differentiate between the two routes
+// router.get('/genre/:genre', async (req , res) => {
+//   const books = await Book.findAll({bookGenre : genre});
+//   res.json(books);
+// });
 
 // GET a single book, added async await
 // Search by book Title rather than ID, or per Quentin, lets try the findOne method. Go over findByPk with tutor. Discuss both options
@@ -26,8 +26,7 @@ router.get('/:id', async (req, res) => {
 });
 
 //Add async any variable can now be 'awaited' (waiting for something to come back)
-// We will be awaiting out user model here 
-router.get("test/:id", async (req, res) => {
+router.get("/test/:id", async (req, res) => {
   try {
   const book = await Book.findByPk(parseInt(req.params.id)); 
   res.status(200).json(book) 

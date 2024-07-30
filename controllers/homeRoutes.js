@@ -4,9 +4,14 @@ const router = require("express").Router()
 router.get('/', (req, res ) => {
     res.render('homepage')
 })
-router.get('/login', function(req,res){
+
+router.get('/login', ( req, res ) => {
     res.render('login');
   })
+
+router.get('/profile', ( req, res ) => {
+    res.render('profile');
+})
 
 // res.render is going to look in views dir and render anything named inbetween quotes
 module.exports = router
