@@ -1,9 +1,9 @@
-                                                                              const express = require('express');
+const express = require('express');
 const axios = require('axios');
 
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
-
+const routes = require('./controllers')
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -41,12 +41,14 @@ app.get('/api/book/:isbn', async (req, res) => {
   }
 });
 
-app.get('/', async(req, res) => {
-  res.render('login');
-});
+// app.get('/', async(req, res) => {
+//   res.render('login');
+// });
 
 // const homeRouter = require('./controllers/homeRoutes');
 // app.use('/', homeRouter)
+
+app.use(routes)
 
 // Start the server
 app.listen(PORT, () => {

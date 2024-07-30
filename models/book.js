@@ -40,11 +40,7 @@ Book.init(
     },
     bookCategory: {
         type: DataTypes.STRING,
-    },
-    bookDescription: {
-        type: DataTypes.STRING,
-    },
-    bookIDStatus: {
+    },    bookIDStatus: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
