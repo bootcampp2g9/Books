@@ -1,21 +1,34 @@
-
-
-// mini project sample code
+// fixed user list
 
 [
-    {
-      "name": "Sal",
-      "email": "sal@hotmail.com",
-      "password": "password12345"
-    },
-    {
-      "name": "Lernantino",
-      "email": "lernantino@gmail.com",
-      "password": "password12345"
-    },
-    {
-      "name": "Amiko",
-      "email": "amiko2k20@aol.com",
-      "password": "password12345"
-    }
-  ]
+  {
+    "name": "Andrew",
+    "email": "andrew@hotmail.com",
+    "password": "password1"
+  },
+  {
+    "name": "Malik",
+    "email": "malik@hotmail.com",
+    "password": "password2"
+  },
+  {
+    "name": "Carmen",
+    "email": "carmen@hotmail.com",
+    "password": "password3"
+  },
+  {
+    "name": "Geri",
+    "email": "geri@hotmail.com",
+    "password": "password4"
+  },
+  {
+    "name": "Brian",
+    "email": "brian@hotmail.com",
+    "password": "password5"
+  },
+  {
+    "name": "Dave",
+    "email": "Dave@hotmail.com",
+    "password": "password6"
+  }
+]
